@@ -301,6 +301,7 @@ class FSMFieldMixin(object):
                 post_transition.send(**signal_kwargs)
             raise
         else:
+            instance.save()
             post_transition.send(**signal_kwargs)
 
         return result
